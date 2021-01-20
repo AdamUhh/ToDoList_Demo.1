@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>To-do List</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="todolist.css" />
+    </head>
+
+    <body class="well">
+<!-- add-task-div must be up here or zindex will block elements from showing -->
+        <div class="add-task-div" id='add-task-div'>
+            <h3 id='titleNameTask'>Add a task</h3>
+            <form id="todo-form">
+                <input type="text" placeholder="Title" id="taskTitleInputBox"/>
+                <!-- <textarea name='comment' placeholder="Description" id="taskDescriptionInputBox" markdown="1"></textarea> -->
+                <textarea name="comment" placeholder="Description" id="taskDescriptionInputBox" markdown="1" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                <input type="text" id="datepicker" placeholder="Due Date (dd/mm/yyyy)" />
+                <input type="button" class="btn btn-primary" value="Add Task" id='addTaskBtn' /> <!--onclick="addTask()"-->
+                <h3 id='titleNameCard'>Add a card</h3>
+                <input type="text" placeholder="Card Title" id="cardTitleInputBox"/>
+                <input type="button" class="btn btn-primary" value="Add Card" id='addCardBtn' /> <!--onclick="addCard()"-->
+            </form>
+
+            <input type="button" class="btn btn-primary" value="Clear Data" onclick='$( "#cleardata-dialog" ).dialog("open");' />
+        </div>
+
+        <div class='delete-stuff-area' id='delete-stuff-area'>
+            <div id="delete-div-tasks">
+                Drag Here to Delete Tasks
+            </div>
+            <div id="delete-div-cards">
+                Drag Here to Delete Cards
+            </div>
+            <div id="delete-div-groups">
+                Drag Here to Delete Groups
+            </div>
+        </div>
+
+
+        <div id="header"> To Do List </div>
+
+        <div id="left-container">
+            <div class="add-group-area">
+                <!-- <form id="todo-group-form"> -->
+                    <input type="text" placeholder="Group Name" id='groupInputBox'/>
+                    <input type="button" class="btn btn-primary" value="Add Group" id='addGroupBtn' />
+                <!-- </form> -->
+            </div>
+            <div id="contain-the-container-group-area">
+                <div id="contain-group-area">
+                    <div class="container-group-area controlgroup ">
+                        <!-- <input type="button" class="openGroupBtn" value="Add Group" id='openGroupBtn' />
+                        <select id='groupSelect' class="groupSelect">
+                            <option>Rename</option>
+                            <option>Change Color</option>
+
+                        </select> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="center-container">
+            <!-- Keep this container -->
+        </div>
+
+
+        <div id="main-rename-dialog" style="display:none;" title="Rename">
+            <label >Rename</label>
+            <input type="text" name="rename-group" id="rename-box" class="text ui-widget-content ui-corner-all" value="" />
+        </div>
+
+        <div id="task-rename-dialog" style="display:none;" title="Rename your task's data">
+            <label>Rename Title</label>
+            <input type="text" name="rename-task" id="task-title-rename-box" class="text ui-widget-content ui-corner-all" value="" />
+            <br /><br />
+            <label >Rename Description</label>
+            <textarea  name="comment" id="task-description-rename-box" class="text ui-widget-content ui-corner-all" value="" ></textarea>
+            <br /><br />
+            <label >New Date</label>
+            <input type="text" name="rename-task" id="task-date-rename-box" class="text ui-widget-content ui-corner-all" value="" />
+        </div>
+
+        <div id="color-dialog" style="display:none;" title="Change color">
+            <label for="colorWell">Color:</label>
+            <input type="color" value="#ff0000" id="colorWell">
+        </div>
+
+        <div id="cleardata-dialog" style="display:none;" title="WARNING!">
+            <label >Are you sure you want to clear all data?</label><br/>
+            <label ><strong>This is irreversible</strong></label>
+        </div>
+
+
+
+	                        <!-- jQuery UI -->
+            <script src="lib/jquery-1.12.4.js"></script>
+            <script src="lib/jqueryui-1.12.1.js"></script>
+            <script src="lib/jquery-touch-punch.js"></script>
+            <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+            <script type="text/javascript" src="todolist.js"></script>
+
+            <script type="text/javascript">
+                $( "#datepicker" ).datepicker();
+                $( "#datepicker" ).datepicker("option", "dateFormat", "dd/mm/yy");
+                $( "#task-date-rename-box" ).datepicker();
+                $( "#task-date-rename-box" ).datepicker("option", "dateFormat", "dd/mm/yy");
+
+            </script>
+
+        </div>
+    </body>
+</html>

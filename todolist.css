@@ -1,0 +1,307 @@
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    border-radius: 10px;
+  }
+
+body {
+
+    background-color: #374a5d !important;
+    /* background-color: #fff !important; */
+    border: 0 !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: 'Sen' !important;
+    margin: 0 0 0 0;
+
+}
+
+
+#center-container{
+    margin: 5vw 0vw 0 20vw;
+    width: 60vw;
+    min-height: 100%;
+    background-color: transparent;
+    border: 0;
+    flex-wrap: wrap;
+    align-items: baseline;
+    /* vertical-align: middle; */
+    text-align: center;
+
+}
+
+#header{
+    position: fixed;
+    font-size: 2vw;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #fff;
+    left: 45%;
+    top: 10px;
+}
+
+.add-task-div{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 16vw;
+    /* margin: 0 5px; */
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    padding-bottom: 15px;
+    /* align-items: center; */
+    font-family: 'Sen', sans-serif;
+
+}
+
+.h3-container {
+    font-size: 1.5vw;
+    display: inline-flex;
+    vertical-align: middle;
+    text-align: center;
+
+}
+
+
+
+.task-list{
+    width: 19vw;
+    float: left;
+    margin: 5px 5px 5px 5px;
+    background-color: #e3e3e3;
+    /* background-color: #d8dadb; */
+
+    border-radius: 10px;
+    font-family: 'Sen', sans-serif;
+    height: 50vh;
+    min-height: 30vh;
+    overflow: auto ;
+    border: 1px;
+    box-shadow: 0px 0px 0px 4px #e3e3e3;
+}
+
+.add-task-div input, .add-task-div textarea{
+    width: 15.3vw;
+    height: 5vh;
+    margin: 0.1vw 5px 0px 0.1vw;
+
+    font-size: 3vh;
+    font-family: 'Sen', sans-serif;
+
+}
+
+.add-task-div input[type='button']{
+    width: 100%;
+    margin-left: 0;
+
+}
+
+.add-task-div h3 {
+    background-color: #ccc;
+    height: 10vh;
+    line-height: 10vh;
+    font-size: 5vh;
+    text-align: center;
+    font-family: 'Sen', sans-serif;
+}
+
+
+.todo-task{
+    border-radius: 5px;
+    background-color: #fff;
+    /* width: 230px; */
+    margin: 5px;
+    padding: 5px;
+    position: relative;
+}
+
+
+.todo-task > .task-header{
+    font-weight: bold;
+    text-align: left;
+}
+
+.todo-task > .task-date{
+    font-size: small;
+    font-style: italic;
+    text-align: left;
+}
+
+.todo-task > .task-description{
+    font-size: smaller;
+    text-align: left;
+    white-space: pre-wrap;
+}
+
+#task-description-rename-box {
+    font-size: smaller;
+    text-align: left;
+    white-space: pre-wrap;
+}
+
+h3{
+    text-align: center;
+}
+
+#delete-div-tasks, #delete-div-cards, #delete-div-groups{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 16vw;
+    height: 100vh;
+    background-color: #fff;
+    border: 3px dotted #000;
+    line-height: 75px;
+    text-align: center;
+    font-size: 1vw;
+}
+
+#left-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16vw;
+    height: 100%;
+    background-color: #e3e3e3;
+    font-family: 'Sen', sans-serif;
+}
+
+.add-group-area {
+    margin: 20px 0;
+    height: 35vh;
+    font-family: 'Sen', sans-serif;
+    position: relative;
+}
+#groupInputBox {
+    position: absolute;
+    display: block;
+    font-family: 'Sen', sans-serif;
+    float: left;
+    width: 100%;
+    height: 6vh;
+    max-height: 6vh;
+    min-height: 6vh;
+    padding: 0;
+    border-width: 0;
+}
+
+#addGroupBtn {
+    float: right;
+    font-family: 'Sen', sans-serif;
+    font-size: inherit;
+    width: 8vw;
+    height: 6vh;
+    max-height: 6vh;
+    min-height: 6vh;
+    position: relative;
+    top: 7vh;
+    align-items: center;
+    box-sizing: border-box;
+    text-align:center;
+}
+
+
+.openGroupBtn {
+    position: absolute;
+    width: 98%;
+    height: auto;
+    font-family: 'Sen';
+    font-size: 150%;
+    vertical-align: middle;
+    text-align: center;
+
+    /* line-height: 0; */
+    height: 100%;
+    border: 1px;
+    background-color: rgb(238, 238, 238);
+    cursor: pointer;
+
+}
+
+div text{
+    filter: invert(1)
+}
+
+.openGroupBtn:hover {
+    filter: brightness(1.15);
+}
+
+.container-group-area {
+    background-color: #ffffff00;
+    /* border: saddlebrown; */
+    position: relative;
+    width: 16.3vw;
+
+}
+
+.ui-button-icon-only.demo-splitbutton-select {
+    width: 1em;
+}
+
+.ui-controlgroup {
+    display: inherit;
+}
+
+#groupSelect-button {
+
+    padding-left: .1em;
+    top: 0.2vh;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+
+}
+
+#cardSelect-button {
+    display: inline-flex;
+    padding-left: .1em;
+    float: right;
+    border-radius: 10px;
+    max-height: 1.5em;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+
+}
+
+#taskSelect-button {
+    display: inline-flex;
+    padding-left: .05em;
+    padding-right: .05em;
+    padding-bottom: .1em;
+    padding-top: .1em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    border: 0;
+    outline: none;
+}
+
+.ui-button .ui-icon{
+    -webkit-filter: hue-rotate(90deg) brightness(10%) grayscale(10%);
+    filter: hue-rotate(90deg) brightness(10%) grayscale(10%);
+}
+
